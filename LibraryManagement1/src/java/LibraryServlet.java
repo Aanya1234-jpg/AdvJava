@@ -29,26 +29,26 @@ public class LibraryServlet extends HttpServlet {
             conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
             if ("view".equals(action)) {
-                String bookName = request.getParameter("BookName");
+                String BookName = request.getParameter("BookName");
 
-                if (bookName == null || bookName.isEmpty()) {
+                if (BookName == null || BookName.isEmpty()) {
                     response.getWriter().println("Please provide a valid book name.");
                     return;
                 }
 
                 pst = conn.prepareStatement("SELECT * FROM books WHERE BookName = ?");
-                pst.setString(1, bookName);
+                pst.setString(1, BookName);
                 rs = pst.executeQuery();
 
                 boolean found = false;
                 while (rs.next()) {
                     found = true;
-                    String bookId = rs.getString("BookId");
+                    String BookId = rs.getString("BookId");
                     String name = rs.getString("BookName");
                     String author = rs.getString("AuthorName");
                     String category = rs.getString("Category");
 
-                    response.getWriter().println("Book ID: " + bookId);
+                    response.getWriter().println("Book ID: " + BookId);
                     response.getWriter().println("Book Name: " + name);
                     response.getWriter().println("Author: " + author);
                     response.getWriter().println("Category: " + category);
@@ -59,15 +59,15 @@ public class LibraryServlet extends HttpServlet {
                 }
 
             } else if ("delete".equals(action)) {
-                String bookName = request.getParameter("bookname");
+                String BookName = request.getParameter("bookname");
 
-                if (bookName == null || bookName.isEmpty()) {
+                if (BookName == null || BookName.isEmpty()) {
                     response.getWriter().println("Please provide a valid book name for deletion.");
                     return;
                 }
 
                 pst = conn.prepareStatement("DELETE FROM books WHERE BookName = ?");
-                pst.setString(1, bookName);
+                pst.setString(1, BookName);
                 int rowsAffected = pst.executeUpdate();
 
                 if (rowsAffected > 0) {

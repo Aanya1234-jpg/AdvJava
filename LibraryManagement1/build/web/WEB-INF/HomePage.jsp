@@ -15,7 +15,7 @@
     <ul>
         <li><a href="addBook.jsp">Add a New Book</a></li>
         <li><a href="deleteBook.jsp">Delete a Book</a></li>
-        <li><a href="viewBooks.jsp">View Books</a></li>
+        <li><a href="LibraryServlet.jsp">To View Books</a></li>
     </ul>
 </body>
 </html>

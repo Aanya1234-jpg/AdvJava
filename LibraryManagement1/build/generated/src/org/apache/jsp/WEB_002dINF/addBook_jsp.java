@@ -30,7 +30,7 @@ public final class addBook_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,25 +41,34 @@ public final class addBook_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
-      out.write("<html>\n");
+      out.write("<html lang=\"en\">\n");
       out.write("<head>\n");
-      out.write("    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("    <title>Get Book</title>\n");
+      out.write("    <meta charset=\"UTF-8\">\n");
+      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+      out.write("    <title>Add Book</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
-      out.write("    <h1>Get Book Details</h1>\n");
-      out.write("    <form action=\"LibraryServlet\" method=\"GET\" name=\"view\">\n");
-      out.write("        Book Name: <input type=\"text\" name=\"bookn\" required/>\n");
-      out.write("        <p></p>\n");
-      out.write("        Author Name: <input type=\"text\" name=\"authorname\"/>\n");
-      out.write("        <p></p>\n");
-      out.write("        <input type=\"hidden\" name=\"action\" value=\"view\" /> <!-- Add hidden action parameter -->\n");
-      out.write("        <input type=\"submit\" value=\"Get Book\"/>            \n");
+      out.write("    <h2>Add a New Book</h2>\n");
+      out.write("    <form action=\"LibraryServlet\" method=\"post\">\n");
+      out.write("        <label for=\"bookid\">Book ID:</label><br>\n");
+      out.write("        <input type=\"text\" id=\"BookId\" name=\"BookId\" required><br><br>\n");
+      out.write("\n");
+      out.write("        <label for=\"bookname\">Book Name:</label><br>\n");
+      out.write("        <input type=\"text\" id=\"BookName\" name=\"BookName\" required><br><br>\n");
+      out.write("\n");
+      out.write("        <label for=\"author\">Author:</label><br>\n");
+      out.write("        <input type=\"text\" id=\"AuthorName\" name=\"AuthorName\" required><br><br>\n");
+      out.write("\n");
+      out.write("        <label for=\"category\">Category:</label><br>\n");
+      out.write("        <input type=\"text\" id=\"Category\" name=\"Category\" required><br><br>\n");
+      out.write("\n");
+      out.write("        <input type=\"submit\" value=\"Add Book\">\n");
       out.write("    </form>\n");
+      out.write("    <br>\n");
+      out.write("    <a href=\"HomePage.jsp\">Back to Home</a>\n");
       out.write("</body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

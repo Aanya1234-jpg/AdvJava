@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class DeleteBook_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -53,8 +53,8 @@ public final class HomePage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <h2>Welcome to the Library</h2>\n");
       out.write("    <ul>\n");
       out.write("        <li><a href=\"addBook.jsp\">Add a New Book</a></li>\n");
-      out.write("        <li><a href=\"deleteBook.jsp\">Delete a Book</a></li>\n");
-      out.write("        <li><a href=\"LibraryServlet.jsp\">To View Books</a></li>\n");
+      out.write("        <li><a href=\"DeleteBook.jsp\">Delete a Book</a></li>\n");
+      out.write("        <li><a href=\"viewBooks.jsp\">View Books</a></li>\n");
       out.write("    </ul>\n");
       out.write("</body>\n");
       out.write("</html>\n");

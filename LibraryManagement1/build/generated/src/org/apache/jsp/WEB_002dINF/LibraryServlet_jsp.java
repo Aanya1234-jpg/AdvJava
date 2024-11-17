@@ -102,7 +102,7 @@ public final class LibraryServlet_jsp extends org.apache.jasper.runtime.HttpJspB
                 }
             }
         } else if ("delete".equals(action)) {
-            String bookName = request.getParameter("bookname");
+            String BookName = request.getParameter("Bookname");
 
             Connection conn = null;
             PreparedStatement pst = null;
@@ -110,13 +110,13 @@ public final class LibraryServlet_jsp extends org.apache.jasper.runtime.HttpJspB
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/library", "root", "");
                 pst = conn.prepareStatement("DELETE FROM books WHERE BookName = ?");
-                pst.setString(1, bookName);
+                pst.setString(1, BookName);
                 int rows = pst.executeUpdate();
 
                 if (rows > 0) {
-                    out.println("<p>Book deleted successfully: " + bookName + "</p>");
+                    out.println("<p>Book deleted successfully: " + BookName + "</p>");
                 } else {
-                    out.println("<p>No book found with the name: " + bookName + "</p>");
+                    out.println("<p>No book found with the name: " + BookName + "</p>");
                 }
 
             } catch (Exception e) {

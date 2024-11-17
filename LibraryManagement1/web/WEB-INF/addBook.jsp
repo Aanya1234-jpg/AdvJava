@@ -7,18 +7,18 @@
 </head>
 <body>
     <h2>Add a New Book</h2>
-    <form action="UserInteraction" method="post">
+    <form action="LibraryServlet" method="post">
         <label for="bookid">Book ID:</label><br>
-        <input type="text" id="bookid" name="bookid" required><br><br>
+        <input type="text" id="BookId" name="BookId" required><br><br>
 
         <label for="bookname">Book Name:</label><br>
-        <input type="text" id="bookname" name="bookname" required><br><br>
+        <input type="text" id="BookName" name="BookName" required><br><br>
 
         <label for="author">Author:</label><br>
-        <input type="text" id="author" name="author" required><br><br>
+        <input type="text" id="AuthorName" name="AuthorName" required><br><br>
 
         <label for="category">Category:</label><br>
-        <input type="text" id="category" name="category" required><br><br>
+        <input type="text" id="Category" name="Category" required><br><br>
 
         <input type="submit" value="Add Book">
     </form>
